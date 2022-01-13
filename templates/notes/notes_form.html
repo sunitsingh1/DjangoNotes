@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form method="POST">{% csrf_token %}   
+    <!-- action="{% url 'notes.new' %}" -->
+    {{form.as_p}}
+    <button class="btn btn-primary my-5">Submit</button>
+    {% if note.id %}
+    <a href="{% url 'notes.detail' pk=note.id %}" class="btn btn-secondary">Cancle</a>
+    {% else %}
+    <a href="{% url 'notes.list' %}" class="btn btn-secondary">Cancle</a>
+    {% endif %}
+</form>
+{% if form.errors %}
+<div class="alert alert-danger my-5">
+    {{form.errors.title.as_text}}
+</div>
+{% endif %}
+
+{% endblock %}
