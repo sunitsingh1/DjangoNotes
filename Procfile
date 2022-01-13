@@ -1,1 +1,1 @@
-web: gunicorn DjangoNotes.wsgi --log-file -
+web: gunicorn smart_notes.wsgi --log-file -
