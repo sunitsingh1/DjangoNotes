@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6p%losr(l8oy56ug2_oh6=lp4ddky+&o7o%!7_h5ttx56r9!$9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -121,6 +121,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
+#for production
+STATIC_ROOT = BASE_DIR / 'staticfiles' 
 
 LOGIN_REDIRECT_URL = '/notes'
 # Default primary key field type
